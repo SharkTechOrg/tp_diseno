@@ -2,6 +2,7 @@
 const formularioEl = document.getElementById('formulario');
 const inputEl = document.getElementById('api-url');
 const notificacionEL = document.getElementById('notificacion');
+const tituloResultadoEL = document.getElementById('titulo-resultado');
 const resultadoEl = document.getElementById('resultado');
 const btnConsultarEl = document.getElementById('btnConsultar');
 const btnDescargarEl = document.getElementById('btnDescargar');
@@ -29,12 +30,14 @@ async function obtenerDatosAPI(url) {
     }
 
     data = await response.json();
+    tituloResultadoEL.classList.remove('d-none'); // Muestra el título de resultados
     resultadoEl.classList.remove('d-none')
     btnDescargarEl.classList.remove('d-none'); // Muestra el botón de Descargar
     mostrarNotificacion('Datos cargados correctamente.', 'success');
     mostrarResultado(data);
   } catch (error) {
     data = null;
+    tituloResultadoEL.classList.remove('d-none'); // Muestra el título de resultados
     resultadoEl.classList.remove('d-none')
     btnDescargarEl.classList.add('d-none'); // Oculta el botón de Descargar
     mostrarNotificacion(`Error al cargar los datos: ${error.message}`, 'danger');
