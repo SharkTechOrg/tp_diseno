@@ -35,7 +35,7 @@ async function obtenerDatosAPI(url) {
     mostrarResultado(data);
   } catch (error) {
     data = null;
-    resultadoEl.classList.add('d-none')
+    resultadoEl.classList.remove('d-none')
     btnDescargarEl.classList.add('d-none'); // Oculta el botón de Descargar
     mostrarNotificacion(`Error al cargar los datos: ${error.message}`, 'danger');
     resultadoEl.innerHTML = '<p class="text-danger mb-0">No se pudieron obtener los datos.</p>';
