@@ -22,12 +22,14 @@
 
   <main class="container my-4">
     <h2 class="text-center">Ingresa una URL para consumir la API</h2>
+    <br>
+    <p class="text-center">Web creada para probar la funcionalidad del consumo de una API y mostrar los resultados obtenidos.</p>
+    <p class="text-center">En este caso, se mostrarán los resultados del JSON en una formato de tabla con los campos "#", "Título", "Contenido", "ID usuario" </p>
     <form id="formulario" class="my-4">
       <div class="mb-3">
         <label for="api-url" class="form-label">URL de la API</label>
-        <input type="text" id="api-url" name="api-url" class="form-control" placeholder="https://jsonplaceholder.typicode.com/posts"
-        value="https://jsonplaceholder.typicode.com/posts"
-          required>
+        <input type="text" id="api-url" name="api-url" class="form-control" placeholder="Ingrese la URL de la API a probar"
+        value="https://jsonplaceholder.typicode.com/posts">
       </div>
       <div class="text-center">
         <button type="submit" class="btn btn-primary" id="btnConsultar">Consultar</button>
